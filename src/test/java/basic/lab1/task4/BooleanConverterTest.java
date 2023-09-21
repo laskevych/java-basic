@@ -9,14 +9,15 @@ import org.junit.jupiter.api.Assertions;
 
 public class BooleanConverterTest {
     @Test
-    @DisplayName("Test BooleanConverter.convert() - integer.")
+    @DisplayName("Method `convert()` should return boolean if pass integer.")
     void testConvertIntToBoolean() {
+        Assertions.assertTrue(BooleanConverter.convert(-1));
         Assertions.assertFalse(BooleanConverter.convert(0));
         Assertions.assertTrue(BooleanConverter.convert(1));
     }
 
     @Test
-    @DisplayName("Test BooleanConverter.convert() - boolean.")
+    @DisplayName("Method `convert()` should return integer if pass boolean.")
     void testConvertBooleanToInt() {
         Assertions.assertEquals(0, BooleanConverter.convert(false));
         Assertions.assertEquals(1, BooleanConverter.convert(true));
