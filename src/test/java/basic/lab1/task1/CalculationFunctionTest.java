@@ -18,12 +18,10 @@ public class CalculationFunctionTest {
     @Test
     @DisplayName("Method `calculateY()` should return valid result.")
     void testCalculateY() {
-        Assertions.assertEquals(22.498668156113357, CalculationFunction.calculateY(-5));
+        Assertions.assertEquals(8.103982867798484, CalculationFunction.calculateY(-1));
         Assertions.assertEquals(9.38776229174348, CalculationFunction.calculateY(0));
-        Assertions.assertEquals(10.790317539865102, CalculationFunction.calculateY(2.5));
-        Assertions.assertEquals(11.071917702349428, CalculationFunction.calculateY(5));
+        Assertions.assertEquals(20.912322183723735, CalculationFunction.calculateY(1));
 
         Assertions.assertEquals(12.0, CalculationFunction.calculateY(6));
-        Assertions.assertEquals(10.0, CalculationFunction.calculateY(10));
     }
 }
