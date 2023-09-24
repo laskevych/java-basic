@@ -6,7 +6,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
-
 public class BooleanConverterTest {
     @Test
     @DisplayName("Method `convert()` should return boolean if pass integer.")

@@ -1,9 +1,8 @@
 package basic.lab1.task1;
 
-import basic.lab1.task1.CalculationFunction;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 public class CalculationFunctionTest {
     @Test

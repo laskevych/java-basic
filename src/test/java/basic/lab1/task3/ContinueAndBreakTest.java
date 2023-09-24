@@ -1,10 +1,8 @@
 package basic.lab1.task3;
 
-import basic.lab1.task3.ContinueAndBreak;
-
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions;
 
 public class ContinueAndBreakTest {
 
