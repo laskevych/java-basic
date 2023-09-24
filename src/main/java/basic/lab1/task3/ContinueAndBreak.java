@@ -4,31 +4,40 @@ import java.util.Scanner;
 
 public class ContinueAndBreak {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter double value of variable `x`: ");
-        double x = scanner.nextDouble();
+        try {
+            Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter number of iterations: ");
-        int numberOfIterations = scanner.nextInt();
+            System.out.print("Enter double value of variable `x`: ");
+            double x = scanner.nextDouble();
 
-        scanner.close();
+            System.out.print("Enter number of iterations: ");
+            int n = scanner.nextInt();
 
-        if (numberOfIterations < 1) {
-            System.err.print("Number of iterations must be >= 1");
+            scanner.close();
+
+            System.out.printf("Result: y = %.4f\n", calculate(x, n));
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
             System.exit(1);
+        }
+    }
+
+    public static double calculate(double x, int numberOfIterations) throws Exception {
+        if (numberOfIterations < 1) {
+            throw new Exception("Number of iterations must be greater or equal `1`");
         }
 
         double y = 1.0;
+        boolean divideByZero = false;
 
         outerLoopLabel:
         for (int i = 1; i <= numberOfIterations - 1; i++) {
-            double s = 0;
-            int j;
 
-            for (j = 0; j <= numberOfIterations; j++) {
+            double subResult = 0;
+            for (int j = 0; j <= numberOfIterations; j++) {
                 if (j + x == 0) {
-                    System.err.println("Division by zero.");
+                    divideByZero = true;
                     break outerLoopLabel;
                 }
 
@@ -36,12 +45,16 @@ public class ContinueAndBreak {
                     continue outerLoopLabel;
                 }
 
-                s += i / (j + x);
+                subResult += i / (j + x);
             }
 
-            y *= s;
+            y *= subResult;
         }
 
-        System.out.printf("Result: y = %.2f\n", y);
+        if (divideByZero) {
+            throw new Exception("Divide by zero.");
+        }
+
+        return y;
     }
 }

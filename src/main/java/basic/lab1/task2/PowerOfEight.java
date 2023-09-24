@@ -27,6 +27,7 @@ public class PowerOfEight {
             }
         } catch (Exception e) {
             System.err.println(e.getMessage());
+            System.exit(1);
         }
     }
 

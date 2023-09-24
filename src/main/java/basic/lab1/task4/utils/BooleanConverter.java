@@ -10,4 +10,3 @@ public class BooleanConverter
         return value != 0;
     }
 }
-
