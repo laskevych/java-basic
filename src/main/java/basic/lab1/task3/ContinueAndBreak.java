@@ -3,26 +3,6 @@ package basic.lab1.task3;
 import java.util.Scanner;
 
 public class ContinueAndBreak {
-    public static void main(String[] args) {
-
-        try {
-            Scanner scanner = new Scanner(System.in);
-
-            System.out.print("Enter double value of variable `x`: ");
-            double x = scanner.nextDouble();
-
-            System.out.print("Enter number of iterations: ");
-            int n = scanner.nextInt();
-
-            scanner.close();
-
-            System.out.printf("Result: y = %.4f\n", calculate(x, n));
-        } catch (Exception e) {
-            System.err.println(e.getMessage());
-            System.exit(1);
-        }
-    }
-
     public static double calculate(double x, int numberOfIterations) throws Exception {
         if (numberOfIterations < 1) {
             throw new Exception("Number of iterations must be greater or equal `1`");
@@ -56,5 +36,25 @@ public class ContinueAndBreak {
         }
 
         return y;
+    }
+
+    public static void main(String[] args) {
+
+        try {
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.print("Enter double value of variable `x`: ");
+            double x = scanner.nextDouble();
+
+            System.out.print("Enter number of iterations: ");
+            int n = scanner.nextInt();
+
+            scanner.close();
+
+            System.out.printf("Result: y = %.4f\n", calculate(x, n));
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            System.exit(1);
+        }
     }
 }
