@@ -9,7 +9,19 @@ public class PowerOfEightTest {
     private static final int MAX_EXPONENT = 10;
     private static final int OVER_MIN_EXPONENT = MIN_EXPONENT - 1;
     private static final int OVER_MAX_EXPONENT = MAX_EXPONENT + 1;
-    private static final int[] CORRECT_VALUES = {1, 8, 64, 512, 4096, 32768, 262144, 2097152, 16777216, 134217728, 1073741824};
+    private static final int[] CORRECT_VALUES = {
+            1,
+            8,
+            64,
+            512,
+            4096,
+            32768,
+            262144,
+            2097152,
+            16777216,
+            134217728,
+            1073741824
+    };
 
 
     @Test
@@ -30,16 +42,28 @@ public class PowerOfEightTest {
     }
 
     @Test()
-    @DisplayName("Method `pow()` should throw exception while exponent is less than `MIN_EXPONENT` or greater `MAX_EXPONENT`.")
+    @DisplayName("Method `pow()` should throw exception while " +
+            "exponent is less than `MIN_EXPONENT` or greater `MAX_EXPONENT`.")
     void testPowThrowExceptionMinExponent() {
-        Assertions.assertThrows(Exception.class, () -> PowerOfEight.pow(OVER_MIN_EXPONENT));
-        Assertions.assertThrows(Exception.class, () -> PowerOfEight.pow(OVER_MAX_EXPONENT));
+        Assertions.assertThrows(
+                Exception.class, () -> PowerOfEight.pow(OVER_MIN_EXPONENT)
+        );
+
+        Assertions.assertThrows(
+                Exception.class, () -> PowerOfEight.pow(OVER_MAX_EXPONENT)
+        );
     }
 
     @Test
-    @DisplayName("Method `powBitwise()` should throw exception while exponent is less than `MIN_EXPONENT` or greater `MAX_EXPONENT`.")
+    @DisplayName("Method `powBitwise()` should throw " +
+            "exception while exponent is less than `MIN_EXPONENT` or greater `MAX_EXPONENT`.")
     void testPowBitwiseThrowExceptionMinExponent() {
-        Assertions.assertThrows(Exception.class, () -> PowerOfEight.powBitwise(OVER_MIN_EXPONENT));
-        Assertions.assertThrows(Exception.class, () -> PowerOfEight.powBitwise(OVER_MAX_EXPONENT));
+        Assertions.assertThrows(
+                Exception.class, () -> PowerOfEight.powBitwise(OVER_MIN_EXPONENT)
+        );
+
+        Assertions.assertThrows(
+                Exception.class, () -> PowerOfEight.powBitwise(OVER_MAX_EXPONENT)
+        );
     }
 }

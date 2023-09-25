@@ -12,15 +12,30 @@ public class ContinueAndBreakTest {
     @Test
     @DisplayName("Method `calculate()` should return valid result.")
     void testCalculation() throws Exception {
-        Assertions.assertEquals(1.0, ContinueAndBreak.calculate(1.0, VALID_NUMBER_OF_ITERATIONS));;
-        Assertions.assertEquals(1.8049999999999995, ContinueAndBreak.calculate(3.0, VALID_NUMBER_OF_ITERATIONS));
+        Assertions.assertEquals(
+                1.0,
+                ContinueAndBreak.calculate(1.0, VALID_NUMBER_OF_ITERATIONS)
+        );
+
+        Assertions.assertEquals(
+                1.8049999999999995,
+                ContinueAndBreak.calculate(3.0, VALID_NUMBER_OF_ITERATIONS)
+        );
     }
 
     @Test
     @DisplayName("Method `calculate()` should throw exceptions.")
     void testCalculationThrowException() {
-        Assertions.assertThrows(Exception.class, () -> ContinueAndBreak.calculate(1, INVALID_NUMBER_OF_ITERATIONS));
-        Assertions.assertThrows(Exception.class, () -> ContinueAndBreak.calculate(0, VALID_NUMBER_OF_ITERATIONS));
-        Assertions.assertThrows(Exception.class, () -> ContinueAndBreak.calculate(-1, VALID_NUMBER_OF_ITERATIONS));
+        Assertions.assertThrows(
+                Exception.class, () -> ContinueAndBreak.calculate(1, INVALID_NUMBER_OF_ITERATIONS)
+        );
+
+        Assertions.assertThrows(
+                Exception.class, () -> ContinueAndBreak.calculate(0, VALID_NUMBER_OF_ITERATIONS)
+        );
+
+        Assertions.assertThrows(
+                Exception.class, () -> ContinueAndBreak.calculate(-1, VALID_NUMBER_OF_ITERATIONS)
+        );
     }
 }
