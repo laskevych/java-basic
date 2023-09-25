@@ -4,9 +4,13 @@ import java.util.Scanner;
 
 public class CalculationFunction {
 
-    final static int CALCULATION_ITERATIONS_COUNT = 17;
+    static final int CALCULATION_ITERATIONS_COUNT = 17;
 
-    public static void validateInput(double startInterval, double endInterval, double step) throws Exception {
+    public static void validateInput(
+            double startInterval,
+            double endInterval,
+            double step
+    ) throws Exception {
         if (startInterval > endInterval) {
             throw new Exception("Value of `endInterval` must be greater than `startInterval`.");
         } else if (step <= 0) {
