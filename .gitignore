@@ -29,3 +29,5 @@ bin/
 .DS_Store
 
 target/
+
+src/main/java/basic/lab2/task1/javadoc
