@@ -35,6 +35,10 @@ public class TramStationTest {
                 "Low ridership",
                 tramStation.sortByCommentsAlphabetically().getHours()[0].getComment()
         );
+
+        Assertions.assertEquals(23, tramStation.getHourWithMinRidership().getRidership());
+
+        Assertions.assertEquals("Very low ridership", tramStation.getLongestCommentInHours());
     }
 
     @Test()
@@ -64,5 +68,9 @@ public class TramStationTest {
                 "Low ridership",
                 tramStation.sortByCommentsAlphabetically().getHours()[0].getComment()
         );
+
+        Assertions.assertEquals(23, tramStation.getHourWithMinRidership().getRidership());
+
+        Assertions.assertEquals("Very low ridership", tramStation.getLongestCommentInHours());
     }
 }

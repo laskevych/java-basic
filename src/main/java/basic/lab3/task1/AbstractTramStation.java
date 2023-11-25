@@ -1,7 +1,6 @@
 package basic.lab3.task1;
 
 import java.util.Arrays;
-import java.util.Objects;
 
 /**
  * Abstract class representing tram station with {@code name}, {@code opened} year and operating hour data.
@@ -72,20 +71,6 @@ public abstract class AbstractTramStation {
         return getTitle().hashCode() * Arrays.hashCode(getRouteNumbers()) * Arrays.hashCode(getHours());
     }
 
-    public Integer calculateTotalRidership() {
-        if (this.getHours().length == 0) {
-            return null;
-        }
-
-        int totalRidership = 0;
-
-        for (Hour hour : getHours()) {
-            totalRidership += hour.getRidership();
-        }
-
-        return totalRidership;
-    }
-
     /**
      * Finds the hours with the minimal ridership in the array of tram station operating hours.
      * @return null, if there is no pointer to the hour, or it is empty,
@@ -119,54 +104,12 @@ public abstract class AbstractTramStation {
         Hour hourWithLongestComment = this.getHours()[0];
 
         for (Hour hour : this.getHours()) {
-            if (hour.getCommentLength() < hourWithLongestComment.getCommentLength()) {
+            if (hour.getCommentLength() > hourWithLongestComment.getCommentLength()) {
                 hourWithLongestComment = hour;
             }
         }
 
         return hourWithLongestComment.getComment();
-    }
-
-    /**
-     * Finds the total ridership for an array of tram station operating hours and prints the result to the console.
-     */
-    private void printTotalRidership() {
-        Integer totalRidership = calculateTotalRidership();
-        System.out.print("Total ridership for station:\t");
-
-        if (totalRidership == null) {
-            System.out.println("There is no ridership hours.");
-        } else {
-            System.out.println(totalRidership);
-        }
-    }
-
-    /**
-     * Prints the array of hours.
-     * @param hours the array of hours to be printed.
-     */
-    private void printHours(Hour[] hours) {
-        for (Hour hour : hours) {
-            System.out.println(hour);
-        }
-    }
-
-    private void printHoursWithMinRidership() {
-        Hour hour = getHourWithMinRidership();
-
-        System.out.printf(
-                "Hours with minimal ridership: %s",
-                Objects.requireNonNullElse(hour, "There are not ridership hours.")
-        );
-    }
-
-    private void printLongestCommentInHours() {
-        String comment = getLongestCommentInHours();
-
-        System.out.printf(
-                "The longest comment in hours list: %s",
-                Objects.requireNonNullElse(comment, "There are not ridership hours.")
-        );
     }
 
     /**
@@ -200,7 +143,7 @@ public abstract class AbstractTramStation {
         Hour[] hours = this.getHours();
 
         for (int i = 1; i < hours.length; i++) {
-            for (int j = i; j > 0 && hours[j].compareTo(hours[j - 1]) < 0; j--) {
+            for (int j = i; j > 0 && hours[j].getComment().compareTo(hours[j - 1].getComment()) < 0; j--) {
                 Hour temp = hours[j];
                 hours[j] = hours[j - 1];
                 hours[j - 1] = temp;
