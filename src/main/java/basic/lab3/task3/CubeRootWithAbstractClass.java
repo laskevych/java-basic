@@ -2,7 +2,7 @@ package basic.lab3.task3;
 
 class CubeRootWithAbstractClass extends FindValueAbstractClass {
     @Override
-    double findValue(double x) {
+    double function(double x) {
         return Math.cbrt(x);
     }
 }
